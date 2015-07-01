@@ -309,7 +309,7 @@ namespace leatherman { namespace curl {
             // Parse out the error code
             static boost::regex regex("HTTP/\\d\\.\\d (\\d\\d\\d).*");
             int status_code = 0;
-            if (file_util::re_search(input.to_string(), regex, &status_code)) {
+            if (util::re_search(input.to_string(), regex, &status_code)) {
                 ctx->res.status_code(status_code);
             }
             return written;
